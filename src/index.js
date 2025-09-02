@@ -21,3 +21,21 @@ async function getWeather(city) {
     return fetchData(url);
 }
 
+//fungsi utama
+(async function main() {
+    console.log("===Weather APP");
+    console.log(
+        "Ketik nama kota untuk melihat cuaca atau exit untuk keluar dari progaram"
+    );
+
+    while (true) {
+        const city = prompt("Kota :").trim();
+        if (!city || city.toLowerCase() === "exit") break;
+
+        try{
+            const data = await getWeather(city)
+            console.log('Cuaca di ${data.name}');
+        }
+    }
+    
+})
