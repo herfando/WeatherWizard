@@ -34,6 +34,9 @@ async function getWeather(city) {
 
         try{
             const data = await getWeather(city)
+            console.log(`Cuaca di ${data.name}, `);
+            console.log(`Suhu : ${data.main.temp}C`)
+        }   catch (err) {
             console.log('Cuaca di ${data.name}');
         }
     }
