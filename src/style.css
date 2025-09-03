@@ -145,3 +145,8 @@ dl {
   opacity: 0.8;
   font-size: 0.9rem;
 }
+
+.kv dd {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
