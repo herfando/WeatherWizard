@@ -96,3 +96,13 @@ form button:hover {
   color: #ff4e4e;
   margin-bottom: 1rem;
 }
+
+/* ============ Card Hasil Cuaca ============ */
+.card {
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  animation: slideUp 0.8s ease-in-out;
+}
