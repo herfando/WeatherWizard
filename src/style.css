@@ -70,3 +70,11 @@ form select {
 form input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
+form button {
+  background: #ff8c00;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
