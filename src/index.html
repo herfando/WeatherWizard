@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Konfigurasi API -->
+    <meta name="API_KEY" content="37390ddba50de2bcbbc025e893db5b76" />
+    <meta
+      name="BASE_URL"
+      content="https://api.openweathermap.org/data/2.5/weather"
+    />
+    <!-- Konfigurasi API -->
+    <title>Aplikasi Cuaca</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Aplikasi Cuaca</h1>
+      <p>Cari cuaca berdasarkan nama kota.</p>
+
+      <form id="search-form" autocomplete="off">
+        <input
+          id="city-input"
+          type="text"
+          placeholder="Masukkan nama kota..."
+          required
+        />
+        <select title="Satuan Suhu" id="unit-select">
+          <option value="metric" selected>°C</option>
+          <option value="imperial">°F</option>
+        </select>
+        <button id="btn-submit" type="submit">Lihat Cuaca</button>
+      </form>
+
+      <div id="status" class="loading" hidden>Memuat....</div>
+      <div id="error" class="error" hidden>Error.....</div>
+
+      <section id="result" class="card" hidden>
+        <div class="">
+          <div>
+            <div class="city" id="city-name">-</div>
+            <div class="" id="country-line">-</div>
+          </div>
+          <img src="" alt="ikon cuaca" id="wx-icon" class="icon" />
+        </div>
+        <div class="">
+          <div class="temp" id="temp-now">--</div>
+          <div class="" id="desc-line">--</div>
+        </div>
+
+        <div class="">
+          <div class="kv">
+            <b>Terasa <span id="feels">--</span></b>
+          </div>
+          <div class="kv">
+            <b>Rentang <span id="range">--</span></b>
+          </div>
+          <div class="kv">
+            <b>Angin <span id="wind">--</span></b>
+          </div>
+          <div class="kv">
+            <b>Kelembapan <span id="humid">--</span></b>
+          </div>
+          <div class="kv">
+            <b>Tekanan <span id="press">--</span></b>
+          </div>
+          <div class="kv">
+            <b>Matahari <span id="sun">--</span></b>
+          </div>
+        </div>
+      </section>
+
+      <div class="">Tip : Gunakan bahasa Indonesia</div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
 </html>
