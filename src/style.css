@@ -14,59 +14,77 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  color: #cbd5e1;
 }
 
 /* ============ Container ============ */
 .container {
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin: 1rem auto;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.15);
   animation: fadeIn 0.8s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode card */
+body.dark-mode .container {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ============ Header ============ */
 header h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   text-align: center;
   font-weight: 700;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  background: linear-gradient(90deg, #4f46e5, #06b6d4, #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 header p {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #cbd5e1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* ============ Form ============ */
 form {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
 form input,
 form select,
 form button {
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
   border: none;
   outline: none;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 form input,
 form select {
   flex: 1;
+  min-width: 200px;
   background: rgba(255, 255, 255, 0.1);
   color: #f8fafc;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -77,17 +95,15 @@ form input::placeholder {
 }
 
 form button {
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  background: linear-gradient(135deg, #4f46e5, #06b6d4, #10b981);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 form button:hover {
-  background: linear-gradient(135deg, #2563eb, #0891b2);
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
 }
 
 /* ============ Status & Error ============ */
@@ -107,14 +123,15 @@ form button:hover {
 
 /* ============ Card Hasil Cuaca ============ */
 .card {
-  margin-top: 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
   animation: slideUp 0.8s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .card header {
@@ -125,51 +142,82 @@ form button:hover {
 }
 
 .city {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #f1f5f9;
 }
 
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 85px;
+  height: 85px;
 }
 
 /* Temperature */
 .temp {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 800;
-  margin: 0.5rem 0;
+  margin: 0.7rem 0;
   color: #38bdf8;
+  transition: color 0.3s ease;
+}
+body.dark-mode .temp {
+  color: #10b981;
 }
 
 /* Detail List */
 dl {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
   text-align: left;
 }
 
 .kv dt {
   font-weight: 600;
   color: #cbd5e1;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .kv dd {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #f8fafc;
 }
 
 /* ============ Footer ============ */
 footer {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #94a3b8;
+}
+
+/* ============ Responsiveness ============ */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .temp {
+    font-size: 3rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  form button {
+    width: 100%;
+  }
 }
 
 /* ============ Animations ============ */
@@ -194,3 +242,32 @@ footer {
     transform: translateY(0);
   }
 }
+/* ============ Toggle Dark Mode Button ============ */
+.toggle-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  color: #f8fafc;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+/* Icon berubah di dark mode */
+body.dark-mode .toggle-btn {
+  background: rgba(0, 0, 0, 0.25);
+}
+
