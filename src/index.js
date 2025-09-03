@@ -1,12 +1,10 @@
-// index.js
-
-// Konfigurasi API dari meta
+// ========== Konfigurasi API ==========
 const API_KEY = document.querySelector('meta[name="API_KEY"]').content;
 const BASE_URL = document.querySelector('meta[name="BASE_URL"]').content;
 let UNITS = "metric";
 const LANG = "id";
 
-// Util DOM
+// ========== Util DOM ==========
 const $ = (s) => document.querySelector(s);
 const statusEl = $("#status");
 const errorEl = $("#error");
@@ -14,10 +12,10 @@ const resultEl = $("#result");
 const form = $("#search-form");
 const inputCity = $("#city-input");
 const unitSel = $("#unit-select");
-
-// Elemen hasil
-const setText = (id, text) => (document.getElementById(id).textContent = text);
 const wxIcon = $("#wx-icon");
+
+// ========== Fungsi utilitas ==========
+const setText = (id, text) => (document.getElementById(id).textContent = text);
 
 const degToCompass = (deg = 0) => {
   const dir = [
@@ -55,7 +53,7 @@ async function getWeather(city) {
   return fetchData(url);
 }
 
-// Event submit form
+// ========== Event submit form ==========
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -85,7 +83,12 @@ form.addEventListener("submit", async (e) => {
         Math.round(data.main.temp_max)
       )}`
     );
-    setText("wind", `${data.wind.speed} ${UNITS === "metric" ? "m/s" : "mph"} ${degToCompass(data.wind.deg)}`);
+    setText(
+      "wind",
+      `${data.wind.speed} ${
+        UNITS === "metric" ? "m/s" : "mph"
+      } ${degToCompass(data.wind.deg)}`
+    );
     setText("humid", `${data.main.humidity}%`);
     setText("press", `${data.main.pressure} hPa`);
     setText(
@@ -105,5 +108,29 @@ form.addEventListener("submit", async (e) => {
     errorEl.hidden = false;
   } finally {
     statusEl.hidden = true;
+  }
+});
+
+// ========== Dark Mode ==========
+const toggleBtn = document.getElementById("toggle-dark");
+
+// Atur preferensi dari localStorage
+if (localStorage.getItem("dark-mode") === "enabled") {
+  document.body.classList.add("dark-mode");
+  toggleBtn.textContent = "☀️";
+} else {
+  toggleBtn.textContent = "🌙";
+}
+
+// Event klik toggle
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    toggleBtn.textContent = "☀️";
+    localStorage.setItem("dark-mode", "enabled");
+  } else {
+    toggleBtn.textContent = "🌙";
+    localStorage.setItem("dark-mode", "disabled");
   }
 });
