@@ -1,14 +1,50 @@
-// Module System
-import promptSync from "prompt-sync";
-const prompt = promptSync({ sigint: true });
+const API_KEY = document.querySelector('meta[name="API_KEY"]').content;
+const BASE_URL = document.querySelector('meta[name="BASE_URL"]').content;
+let UNITS = "metric";
+const LANG = "id";
 
-// Konfigurasi dotenv
-import dotenv from "dotenv";
-dotenv.config();
+// Konfigurasi Util DOM
+const $ = (s) => document.querySelector(s);
+const statusEl = $("#status");
+const errorEl = $("#error");
+const resultEl = $("#result");
+const form = $("#search-form");
+const inputCity = $("#city-input");
+const unitSel = $("#unit-select");
+const btn = $("#btn-submit");
 
-const UNITS = "metric";
-const BASE_URL = process.env.BASE_URL;
-const API_KEY = process.env.API_KEY;
+const show = (elemen) => (elemen.hidden = false);
+const hide = (elemen) => (elemen.hidden = true);
+const setText = (id, text) => (document.getElementById(id).textContent = text);
+
+const degToCompass = (deg = 0) => {
+  const dir = [
+    "U",
+    "U-Timur",
+    "Timur",
+    "S-Timur",
+    "Selatan",
+    "S-Barat",
+    "Barat",
+    "U-Barat",
+  ];
+  return dir[Math.round((deg % 360) / 45) % 8];
+};
+
+const fmtUnit = (units, t) =>
+  t == null ? "-" : units === "imperial" ? `${t}°F` : `${t}°C`;
+
+const toLocalTime = (unix, tz) => {
+  try {
+    return new Date((unix + (tz ?? 0)) * 1000).toLocaleTimeString("id-ID", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+  } catch {
+    return "-";
+  }
+};
 
 async function fetchData(url) {
   const response = await fetch(url);
