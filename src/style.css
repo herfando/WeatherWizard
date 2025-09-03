@@ -158,3 +158,15 @@ footer {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+/* ============ Animations ============ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
