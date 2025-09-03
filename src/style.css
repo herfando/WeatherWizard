@@ -106,3 +106,10 @@ form button:hover {
   text-align: center;
   animation: slideUp 0.8s ease-in-out;
 }
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
