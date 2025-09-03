@@ -123,3 +123,10 @@ form button:hover {
   width: 70px;
   height: 70px;
 }
+
+/* Temperature */
+.temp {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
