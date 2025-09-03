@@ -150,3 +150,11 @@ dl {
   font-size: 1.1rem;
   font-weight: bold;
 }
+
+/* ============ Footer ============ */
+footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
