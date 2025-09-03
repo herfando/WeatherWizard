@@ -83,3 +83,10 @@ form button:hover {
   background: #ff6700;
   transform: translateY(-2px);
 }
+
+/* ============ Status & Error ============ */
+.loading {
+  text-align: center;
+  color: #ffe600;
+  margin-bottom: 1rem;
+}
