@@ -123,3 +123,19 @@ form button:hover {
   width: 70px;
   height: 70px;
 }
+
+/* Temperature */
+.temp {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+/* Detail List */
+dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
