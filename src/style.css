@@ -90,3 +90,9 @@ form button:hover {
   color: #ffe600;
   margin-bottom: 1rem;
 }
+
+.error {
+  text-align: center;
+  color: #ff4e4e;
+  margin-bottom: 1rem;
+}
