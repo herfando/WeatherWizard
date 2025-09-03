@@ -113,3 +113,8 @@ form button:hover {
   align-items: center;
   margin-bottom: 1rem;
 }
+
+.city {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
