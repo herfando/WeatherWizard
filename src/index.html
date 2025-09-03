@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,66 +11,87 @@
       content="https://api.openweathermap.org/data/2.5/weather"
     />
     <!-- Konfigurasi API -->
+
     <title>Aplikasi Cuaca</title>
+    <meta name="description" content="Aplikasi cuaca sederhana untuk mencari informasi kondisi kota di seluruh dunia." />
   </head>
   <body>
-    <main class="container">
+    <header>
       <h1>Aplikasi Cuaca</h1>
       <p>Cari cuaca berdasarkan nama kota.</p>
+    </header>
 
-      <form id="search-form" autocomplete="off">
+    <main class="container">
+      <!-- Form Pencarian -->
+      <form id="search-form" autocomplete="off" aria-label="Form pencarian cuaca">
+        <label for="city-input" class="sr-only">Nama Kota</label>
         <input
           id="city-input"
           type="text"
           placeholder="Masukkan nama kota..."
           required
+          aria-required="true"
         />
-        <select title="Satuan Suhu" id="unit-select">
+
+        <label for="unit-select" class="sr-only">Satuan Suhu</label>
+        <select title="Satuan Suhu" id="unit-select" aria-label="Pilih satuan suhu">
           <option value="metric" selected>°C</option>
           <option value="imperial">°F</option>
         </select>
+
         <button id="btn-submit" type="submit">Lihat Cuaca</button>
       </form>
 
-      <div id="status" class="loading" hidden>Memuat....</div>
-      <div id="error" class="error" hidden>Error.....</div>
+      <!-- Status -->
+      <div id="status" class="loading" hidden>Memuat...</div>
+      <div id="error" class="error" hidden>Terjadi kesalahan, coba lagi.</div>
 
-      <section id="result" class="card" hidden>
-        <div class="">
+      <!-- Hasil -->
+      <section id="result" class="card" hidden aria-live="polite">
+        <header>
           <div>
-            <div class="city" id="city-name">-</div>
-            <div class="" id="country-line">-</div>
+            <h2 class="city" id="city-name">-</h2>
+            <p id="country-line">-</p>
           </div>
-          <img src="" alt="ikon cuaca" id="wx-icon" class="icon" />
-        </div>
-        <div class="">
-          <div class="temp" id="temp-now">--</div>
-          <div class="" id="desc-line">--</div>
+          <img src="" alt="Ikon cuaca" id="wx-icon" class="icon" />
+        </header>
+
+        <div>
+          <p class="temp" id="temp-now">--</p>
+          <p id="desc-line">--</p>
         </div>
 
-        <div class="">
+        <dl>
           <div class="kv">
-            <b>Terasa <span id="feels">--</span></b>
+            <dt>Terasa</dt>
+            <dd id="feels">--</dd>
           </div>
           <div class="kv">
-            <b>Rentang <span id="range">--</span></b>
+            <dt>Rentang</dt>
+            <dd id="range">--</dd>
           </div>
           <div class="kv">
-            <b>Angin <span id="wind">--</span></b>
+            <dt>Angin</dt>
+            <dd id="wind">--</dd>
           </div>
           <div class="kv">
-            <b>Kelembapan <span id="humid">--</span></b>
+            <dt>Kelembapan</dt>
+            <dd id="humid">--</dd>
           </div>
           <div class="kv">
-            <b>Tekanan <span id="press">--</span></b>
+            <dt>Tekanan</dt>
+            <dd id="press">--</dd>
           </div>
           <div class="kv">
-            <b>Matahari <span id="sun">--</span></b>
+            <dt>Matahari</dt>
+            <dd id="sun">--</dd>
           </div>
-        </div>
+        </dl>
       </section>
 
-      <div class="">Tip : Gunakan bahasa Indonesia</div>
+      <footer>
+        <small>Tip: Gunakan bahasa Indonesia untuk hasil lebih baik</small>
+      </footer>
     </main>
 
     <script src="index.js"></script>
