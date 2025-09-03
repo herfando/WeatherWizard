@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Konfigurasi API -->
+    <meta name="API_KEY" content="37390ddba50de2bcbbc025e893db5b76" />
+    <meta
+      name="BASE_URL"
+      content="https://api.openweathermap.org/data/2.5/weather"
+    />
+    <!-- Konfigurasi API -->
+
+    <title>Aplikasi Cuaca</title>
+    <meta name="description" content="Aplikasi cuaca sederhana untuk mencari informasi kondisi kota di seluruh dunia." />
+    
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+  <body>
+     <!-- Tombol Toggle Dark Mode -->
+  <button id="toggle-dark" aria-label="Ganti Mode" class="toggle-btn">
+    🌙
+  </button>
+    <header>
+      <h1>Aplikasi Cuaca</h1>
+      <p>Cari cuaca berdasarkan nama kota.</p>
+    </header>
+
+    <main class="container">
+      <!-- Form Pencarian -->
+      <form id="search-form" autocomplete="off" aria-label="Form pencarian cuaca">
+        <label for="city-input" class="sr-only">Nama Kota</label>
+        <input
+          id="city-input"
+          type="text"
+          placeholder="Masukkan nama kota..."
+          required
+          aria-required="true"
+        />
+
+        <label for="unit-select" class="sr-only">Satuan Suhu</label>
+        <select title="Satuan Suhu" id="unit-select" aria-label="Pilih satuan suhu">
+          <option value="metric" selected>°C</option>
+          <option value="imperial">°F</option>
+        </select>
+
+        <button id="btn-submit" type="submit">Lihat Cuaca</button>
+      </form>
+
+      <!-- Status -->
+      <div id="status" class="loading" hidden>Memuat...</div>
+      <div id="error" class="error" hidden>Terjadi kesalahan, coba lagi.</div>
+
+      <!-- Hasil -->
+      <section id="result" class="card" hidden aria-live="polite">
+        <header>
+          <div>
+            <h2 class="city" id="city-name">-</h2>
+            <p id="country-line">-</p>
+          </div>
+          <img src="" alt="Ikon cuaca" id="wx-icon" class="icon" />
+        </header>
+
+        <div>
+          <p class="temp" id="temp-now">--</p>
+          <p id="desc-line">--</p>
+        </div>
+
+        <dl>
+          <div class="kv">
+            <dt>Terasa</dt>
+            <dd id="feels">--</dd>
+          </div>
+          <div class="kv">
+            <dt>Rentang</dt>
+            <dd id="range">--</dd>
+          </div>
+          <div class="kv">
+            <dt>Angin</dt>
+            <dd id="wind">--</dd>
+          </div>
+          <div class="kv">
+            <dt>Kelembapan</dt>
+            <dd id="humid">--</dd>
+          </div>
+          <div class="kv">
+            <dt>Tekanan</dt>
+            <dd id="press">--</dd>
+          </div>
+          <div class="kv">
+            <dt>Matahari</dt>
+            <dd id="sun">--</dd>
+          </div>
+        </dl>
+      </section>
+
+      <footer>
+        <small>Tip: Gunakan bahasa Indonesia untuk hasil lebih baik</small>
+      </footer>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
