@@ -145,3 +145,12 @@ form select:focus {
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
   transform: scale(1.02);
 }
+
+form button {
+  background: linear-gradient(135deg, #4f46e5, #06b6d4, #10b981);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+}
