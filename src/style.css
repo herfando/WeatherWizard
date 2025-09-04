@@ -47,3 +47,9 @@ body::after {
   opacity: 0.2;
   z-index: -1;
 }
+
+/* Dark mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  color: #cbd5e1;
+}
