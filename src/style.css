@@ -125,3 +125,12 @@ form button {
   font-size: 1rem;
   transition: all 0.3s ease;
 }
+
+form input,
+form select {
+  flex: 1;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
