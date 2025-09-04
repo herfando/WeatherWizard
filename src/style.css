@@ -138,3 +138,10 @@ form select {
 form input::placeholder {
   color: rgba(226, 232, 240, 0.6);
 }
+
+form input:focus,
+form select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+  transform: scale(1.02);
+}
