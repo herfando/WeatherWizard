@@ -163,3 +163,10 @@ form button:hover {
 /* ===================================================
    STATUS & ERROR
 =================================================== */
+.loading {
+  text-align: center;
+  color: #facc15;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  animation: pulse 1.5s infinite;
+}
