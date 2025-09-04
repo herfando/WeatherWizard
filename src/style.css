@@ -37,3 +37,13 @@ body::before {
   animation: bgMove 25s linear infinite;
   z-index: -2;
 }
+
+/* Stars / particles */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  opacity: 0.2;
+  z-index: -1;
+}
