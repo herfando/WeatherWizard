@@ -104,3 +104,13 @@ header p {
   margin-bottom: 2.5rem;
   animation: fadeIn 1.5s ease;
 }
+
+/* ===================================================
+   FORM
+=================================================== */
+form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
