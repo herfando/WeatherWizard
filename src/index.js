@@ -41,6 +41,7 @@ const toLocalTime = (unix, tz) => {
 };
 
 async function fetchData(url) {
+  const ctrl = new AbortController();
   const response = await fetch(url);
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   return response.json();
