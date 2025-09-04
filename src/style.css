@@ -134,3 +134,7 @@ form select {
   color: #f8fafc;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
+
+form input::placeholder {
+  color: rgba(226, 232, 240, 0.6);
+}
