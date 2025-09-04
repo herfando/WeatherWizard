@@ -170,3 +170,10 @@ form button:hover {
   margin-bottom: 1rem;
   animation: pulse 1.5s infinite;
 }
+
+.error {
+  text-align: center;
+  color: #f87171;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
