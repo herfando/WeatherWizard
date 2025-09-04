@@ -24,3 +24,16 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
+/* Background animated gradient */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(79,70,229,0.3), transparent 70%),
+              radial-gradient(circle, rgba(6,182,212,0.3), transparent 70%),
+              radial-gradient(circle, rgba(16,185,129,0.3), transparent 70%);
+  background-size: 40% 40%;
+  animation: bgMove 25s linear infinite;
+  z-index: -2;
+}
