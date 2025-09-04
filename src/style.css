@@ -11,3 +11,16 @@ html, body {
   height: 100%;
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
+  color: #e2e8f0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  transition: background 0.6s ease-in-out, color 0.4s ease;
+  position: relative;
+  overflow-x: hidden;
+}
