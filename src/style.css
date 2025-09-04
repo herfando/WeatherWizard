@@ -177,3 +177,20 @@ form button:hover {
   font-weight: 700;
   margin-bottom: 1rem;
 }
+
+/* ===================================================
+   CARD
+=================================================== */
+.card {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: center;
+  animation: slideUp 1s ease forwards;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
