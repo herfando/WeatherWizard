@@ -70,3 +70,8 @@ body.dark-mode {
   animation: fadeIn 1s ease forwards;
   transition: all 0.3s ease;
 }
+
+body.dark-mode .container {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
