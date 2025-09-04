@@ -114,3 +114,14 @@ form {
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
+
+form input,
+form select,
+form button {
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
