@@ -53,3 +53,20 @@ body.dark-mode {
   background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
   color: #cbd5e1;
 }
+
+/* ===================================================
+   CONTAINER
+=================================================== */
+.container {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  border-radius: 28px;
+  padding: 3rem;
+  margin: 2rem auto;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: fadeIn 1s ease forwards;
+  transition: all 0.3s ease;
+}
