@@ -81,3 +81,18 @@ body.dark-mode .container {
   border-color: #38bdf8;
   box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
 }
+
+/* ===================================================
+   HEADER
+=================================================== */
+header h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4, #10b981, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  animation: slideDown 1s ease;
+}
