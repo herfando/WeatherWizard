@@ -76,7 +76,7 @@ body.dark-mode .container {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-* Hover glowing border */
+/* Hover glowing border */
 .container:hover {
   border-color: #38bdf8;
   box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
@@ -193,4 +193,188 @@ form button:hover {
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 45px rgba(6, 182, 212, 0.5);
+}
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.city {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.icon {
+  width: 95px;
+  height: 95px;
+}
+
+/* Temperature */
+.temp {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 1rem 0;
+  color: #38bdf8;
+  transition: color 0.3s ease;
+}
+body.dark-mode .temp {
+  color: #10b981;
+}
+
+/* Details */
+dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.kv dt {
+  font-weight: 600;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+.kv dd {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  animation: fadeIn 2s ease;
+}
+
+footer a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #10b981;
+  text-decoration: underline;
+}
+
+/* ===================================================
+   TOGGLE BUTTON
+=================================================== */
+.toggle-btn {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.3rem;
+  color: #f8fafc;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1) rotate(8deg);
+}
+
+body.dark-mode .toggle-btn {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    padding: 2.2rem;
+  }
+  header h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  .container {
+    padding: 1.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  .temp {
+    font-size: 3.2rem;
+  }
+  form {
+    flex-direction: column;
+  }
+  form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .city {
+    font-size: 1.5rem;
+  }
+  .temp {
+    font-size: 2.6rem;
+  }
+  dl {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes bgMove {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-20%, -20%); }
+  100% { transform: translate(0, 0); }
 }
