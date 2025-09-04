@@ -96,3 +96,11 @@ header h1 {
   letter-spacing: 1px;
   animation: slideDown 1s ease;
 }
+
+header p {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 1.5s ease;
+}
